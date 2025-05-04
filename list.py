@@ -15,7 +15,7 @@ for i in  range (len(matrix)):
         print(matrix[i][j],end=" ")
     print("\n")
 
-row=int(input("How many rows would you like"))
+"""row=int(input("How many rows would you like"))
 column=int(input("How many columns would you like"))
 list=[]
 
@@ -29,7 +29,7 @@ for i in range(row):
 for i in range(len(list)):
     for j in range(len(list[i])):
         print(list[i][j],end=" ")
-    print("\n")
+    print("\n")"""
 
 metricsA=[[1,2],
           [3,4]]
@@ -41,3 +41,8 @@ result=[[0,0],[0,0]]
 for i in range(2):
     for j in range(2):
         result[i][j]=metricsA[i][j]+MetricsB[i][j]
+practise=["2","3","4","5"]
+#string becaue of the ""
+for i in practise:
+    print(i)
+# itrating the list the above is how you do 
