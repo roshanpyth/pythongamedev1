@@ -14,6 +14,7 @@ lines=[]
 nom=8
 nextsat=0
 def satelite():
+    global startime
     for i in range(8):
         actor=Actor("satelite")
         actor.pos=(random.randint(50,400),random.randint(50,200))
@@ -29,6 +30,12 @@ def draw():
         i.draw()
         screen.draw.text(str(number),(i.pos[0],i.pos[1]+20))
         number=number+1
+    if nextsat<nom:
+        totaltime=time()-startime
+        screen.draw.text(str(round(totaltime,1)),(100,50))
+    else:
+        screen.draw.text(str(round(totaltime,1)),(100,50))
+        #round function expects two parametres first you give the number and the second is how many inteters you need after  the decimal eg 1
         #str, what ever value u put in it, it will be converted to strong
 
 def on_mouse_down(pos):
@@ -49,5 +56,6 @@ def on_mouse_down(pos):
 
 satelite()
 #this is calling
+
 
 pgzrun.go()
