@@ -17,10 +17,26 @@ def ball():
 def draw():
     screen.blit("cricket",(0,0))
     number=1
-   
+    print(red_ball)
     for i in red_ball:
         i.draw()
-        screen.draw.text(str(number),(i.pos[0],i.pos[1]+20))
+        screen.draw.text(str(number),(i.pos[0],i.pos[1]+20),color="blue")
         number=number+1
+
+def on_mouse_down(pos):
+    global red_ball
+    global nextball
+    global lines
+    if nextball<nom:
+        if red_ball [nextball].collidepoint(pos):
+            if nextball:
+                lines.append((red_ball[nextball-1].pos, red_ball[nextball].pos))
+            nextball=nextball+1
+        else:
+            lines=[]
+            red_ball=0
+
+
 ball()
+print(red_ball)
 pgzrun.go()
